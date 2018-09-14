@@ -1,0 +1,6 @@
+/core/Config.php
+/core/Secrets.php
+/vendor/
+composer.lock
+.idea
+.htaccess
