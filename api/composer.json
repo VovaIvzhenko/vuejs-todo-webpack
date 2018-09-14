@@ -1,0 +1,16 @@
+{
+  "name": "dailysocials/api",
+  "require": {
+    "klein/klein": "^2.1",
+    "catfan/Medoo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "./app",
+      "controllers\\": "./controllers",
+      "core\\": "./core",
+      "routes\\": "./routes",
+      "models\\": "./models"
+    }
+  }
+}
