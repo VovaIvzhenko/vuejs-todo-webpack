@@ -2,7 +2,6 @@
 
 namespace controllers;
 
-use models\UsersModel;
 use core\Config;
 
 class MainController
