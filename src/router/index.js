@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Home from '@/pages/Home'
+import Notes from '@/pages/Notes'
+import Todo from '@/pages/Todo'
 
 Vue.use(Router)
 
@@ -14,9 +15,14 @@ export default new Router({
       component: Home
     },
     {
-      path: '/hello',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/notes',
+      name: 'Notes',
+      component: Notes
+    },
+    {
+      path: '/todo',
+      name: 'Todo',
+      component: Todo
     }
   ]
 })

@@ -5,8 +5,11 @@
                 <li class="uk-active">
                     <router-link to="/" class="uk-active">Home</router-link>
                 </li>
+                <li class="uk-active">
+                    <router-link to="/notes" class="uk-active">Notes</router-link>
+                </li>
                 <li>
-                    <router-link to="/hello">Hello page</router-link>
+                    <router-link to="/todo">Todo</router-link>
                 </li>
             </ul>
         </div>
