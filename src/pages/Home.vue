@@ -20,7 +20,10 @@ export default {
     }
   },
   created () {
-    this.test()
+    let arr = ['test1', 'test2', 'test3']
+    delete arr[1]
+    this.$cookie.set('arr', JSON.stringify(arr))
+    console.log(JSON.parse(this.$cookie.get('arr')))
   }
 }
 </script>

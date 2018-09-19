@@ -12,6 +12,9 @@ class NotesController
 {
     public function getNotes()
     {
-
+        return [
+            ['title' => 'test title', 'description' => 'test description'],
+            ['title' => 'test213 title123', 'description' => 'test123 description123']
+        ];
     }
 }
