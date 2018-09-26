@@ -8,13 +8,44 @@
 
 namespace controllers;
 
+use models\NotesModel;
+use models\CategoriesModel;
+
 class NotesController
 {
+    private $notesModel;
+    private $categoriesModel;
+    private $response;
+
+    public function __construct()
+    {
+        $this->response = new \StdClass();
+        $this->notesModel = new NotesModel();
+        $this->categoriesModel = new CategoriesModel();
+    }
+
+    public function collectData()
+    {
+        $this->response->notes = $this->getNotes();
+        $this->response->categories = $this->getCategories();
+
+        return $this->response;
+    }
+
+    public function getCategories()
+    {
+        return $this->categoriesModel->select('*', ['st' => 1]);
+    }
+
     public function getNotes()
     {
-        return [
-            ['title' => 'test title', 'description' => 'test description'],
-            ['title' => 'test213 title123', 'description' => 'test123 description123']
-        ];
+        $notes = [];
+        $result = $this->notesModel->select('*', ['st' => 1]);
+
+        foreach ($result as $row) {
+            $notes[$row['id_cat']][] = $row;
+        }
+
+        return $notes;
     }
 }

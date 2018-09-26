@@ -23,7 +23,9 @@ class Router
             $notesController = new NotesController();
 
             $this->klein->respond('GET', '/get', function ($request, $response) use ($notesController) {
-                $notesController->getNotes();
+                $response->json(
+                    $notesController->collectData()
+                );
             });
 
             $this->klein->respond('GET', '/test', function ($request, $response) use ($notesController) {
